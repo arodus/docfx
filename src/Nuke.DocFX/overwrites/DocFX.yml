@@ -1,0 +1,31 @@
+﻿additionalProperties:
+  metadata:
+    - name: 'Projects'
+      type: 'List<string>'
+      position: 'Start'
+      separator: ' '
+      format: '{value}'
+      help: 'The projects for which the metadata should be built.'
+  template:
+    - name: 'Command'
+      type: 'string'
+      position: 'Start'
+      separator: ' '
+      format: '{value}'
+      help: 'The command to execute.'
+
+enumerations:
+  - name: 'DocFXTemplateCommand'
+    values: 
+      - "Export"
+      - "List"
+
+propertyOverwrites:
+  DocFXMetadataSettings.MSBuildProperties:
+    type: 'Dictionary<string, string>'
+    itemFormat: '{key}={value}'
+    separator: ';'
+  DocFXPdfSettings.Host:
+    name: 'PdfHost'
+
+
