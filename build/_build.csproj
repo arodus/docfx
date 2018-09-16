@@ -32,7 +32,6 @@
   
   <ItemGroup>
     <ProjectReference Include="..\src\Nuke.DocFX.Generator\Nuke.DocFX.Generator.csproj" />
-    <ProjectReference Include="..\src\Nuke.DocFX\Nuke.DocFX.csproj" />
   </ItemGroup>
 
 </Project>

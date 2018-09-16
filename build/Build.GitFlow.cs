@@ -12,8 +12,6 @@ using static Nuke.GitHub.GitHubTasks;
 using static Nuke.Common.IO.PathConstruction;
 using static Nuke.Common.Tools.Git.GitTasks;
 
-using Nuke.DocFX;
-using static Nuke.DocFX.DocFXTasks;
 partial class Build
 {
     bool IsReleaseBranch => GitRepository.Branch.NotNull().StartsWith("release/");
@@ -100,20 +98,4 @@ partial class Build
 
         return true;
     }
-
-    Target Example => _ => _
-        .Executes(() =>
-        {
-            // docfx build docfx.json --output=output --template=template1,template2
-            DocFXBuild(s => s
-                .SetOutputFolder("output")
-                .SetTemplates("template1", "template2")
-                .SetConfigFile("docfx.json"));
-
-            // docfx metadata project1 project2 --output=output
-            DocFXMetadata(s => s
-                .SetProjects("project1", "project2")
-                .SetOutputFolder("output"));
-        });
-    
 }
