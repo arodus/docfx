@@ -3,7 +3,7 @@
 // https://github.com/nuke-build/nuke/blob/master/LICENSE
 
 // Generated with Nuke.CodeGeneration, Version: 0.8.0 [CommitSha: 0a204764].
-// Generated from https://github.com/nuke-build/nswag/blob/master/src/Nuke.DocFX/specifications/DocFX.json.
+// Generated from https://github.com/nuke-build/docfx/blob/master/src/Nuke.DocFX/specifications/DocFX.json.
 
 using JetBrains.Annotations;
 using Newtonsoft.Json;
