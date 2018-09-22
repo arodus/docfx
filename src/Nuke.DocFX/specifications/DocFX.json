@@ -46,7 +46,7 @@
           {
             "name": "CleanupCacheHistory",
             "type": "bool",
-            "format": "--cleanupCacheHistory={value}",
+            "format": "--cleanupCacheHistory",
             "help": "If set to true, docfx create a new intermediate folder for cache files, historical cache data will be cleaned up."
           },
           {
@@ -59,31 +59,31 @@
           {
             "name": "DisableGitFeatures",
             "type": "bool",
-            "format": "--disableGitFeatures={value}",
+            "format": "--disableGitFeatures",
             "help": "Disable fetching Git related information for articles. By default it is enabled and may have side effect on performance when the repo is large."
           },
           {
             "name": "DryRun",
             "type": "bool",
-            "format": "--dryRun={value}",
+            "format": "--dryRun",
             "help": "If set to true, template will not be actually applied to the documents. This option is always used with --exportRawModel or --exportViewModel is set so that only raw model files or view model files are generated."
           },
           {
             "name": "EnableDebugMode",
             "type": "bool",
-            "format": "--debug={value}",
+            "format": "--debug",
             "help": "Run in debug mode. With debug mode, raw model and view model will be exported automatically when it encounters error when applying templates. If not specified, it is false."
           },
           {
             "name": "ExportRawModel",
             "type": "bool",
-            "format": "--exportRawModel={value}",
+            "format": "--exportRawModel",
             "help": "If set to true, data model to run template script will be extracted in .raw.model.json extension."
           },
           {
             "name": "ExportViewModel",
             "type": "bool",
-            "format": "--exportViewModel={value}",
+            "format": "--exportViewModel",
             "help": "If set to true, data model to apply template will be extracted in .view.model.json extension."
           },
           {
@@ -108,13 +108,13 @@
           {
             "name": "ForcePostProcess",
             "type": "bool",
-            "format": "--forcePostProcess={value}",
+            "format": "--forcePostProcess",
             "help": "Force to re-process the documentation in post processors. It will be cascaded from force option."
           },
           {
             "name": "ForceRebuild",
             "type": "bool",
-            "format": "--force={value}",
+            "format": "--force",
             "help": "Force re-build all the documentation."
           },
           {
@@ -151,7 +151,7 @@
           {
             "name": "KeepFileLink",
             "type": "bool",
-            "format": "--keepFileLink={value}",
+            "format": "--keepFileLink",
             "help": "If set to true, docfx does not dereference (aka. copy) file to the output folder, instead, it saves a link_to_path property inside mainfiest.json to indicate the physical location of that file."
           },
           {
@@ -181,7 +181,7 @@
           {
             "name": "NoLangKeyword",
             "type": "bool",
-            "format": "--noLangKeyword={value}",
+            "format": "--noLangKeyword",
             "help": "Disable default lang keyword."
           },
           {
@@ -219,7 +219,7 @@
           {
             "name": "PrintHelpMessage",
             "type": "bool",
-            "format": "--help={value}",
+            "format": "--help",
             "help": "Print help message for this sub-command."
           },
           {
@@ -244,7 +244,7 @@
           {
             "name": "Serve",
             "type": "bool",
-            "format": "--serve={value}",
+            "format": "--serve",
             "help": "Host the generated documentation to a website."
           },
           {
@@ -297,7 +297,7 @@
           {
             "name": "PrintHelpMessage",
             "type": "bool",
-            "format": "--help={value}",
+            "format": "--help",
             "help": "Print help message for this sub-command."
           },
           {
@@ -323,7 +323,7 @@
           {
             "name": "PrintHelpMessage",
             "type": "bool",
-            "format": "--help={value}",
+            "format": "--help",
             "help": "Print help message for this sub-command."
           },
           {
@@ -370,7 +370,7 @@
           {
             "name": "OnlyConfigFile",
             "type": "bool",
-            "format": "--file={value}",
+            "format": "--file",
             "help": "Generate config file docfx.json only, no project folder will be generated."
           },
           {
@@ -382,19 +382,19 @@
           {
             "name": "Overwrite",
             "type": "bool",
-            "format": "--overwrite={value}",
+            "format": "--overwrite",
             "help": "Specify if the current file will be overwritten if it exists."
           },
           {
             "name": "PrintHelpMessage",
             "type": "bool",
-            "format": "--help={value}",
+            "format": "--help",
             "help": "Print help message for this sub-command."
           },
           {
             "name": "Quiet",
             "type": "bool",
-            "format": "--quiet={value}",
+            "format": "--quiet",
             "help": "Quietly generate the default docfx.json."
           }
         ]
@@ -442,7 +442,7 @@
           {
             "name": "PrintHelpMessage",
             "type": "bool",
-            "format": "--help={value}",
+            "format": "--help",
             "help": "Print help message for this sub-command."
           },
           {
@@ -474,13 +474,13 @@
           {
             "name": "DisableDefaultFilter",
             "type": "bool",
-            "format": "--disableDefaultFilter={value}",
+            "format": "--disableDefaultFilter",
             "help": "Disable the default API filter (default filter only generate public or protected APIs)."
           },
           {
             "name": "DisableGitFeatures",
             "type": "bool",
-            "format": "--disableGitFeatures={value}",
+            "format": "--disableGitFeatures",
             "help": "Disable fetching Git related information for articles. By default it is enabled and may have side effect on performance when the repo is large."
           },
           {
@@ -492,7 +492,7 @@
           {
             "name": "ForceRebuild",
             "type": "bool",
-            "format": "--force={value}",
+            "format": "--force",
             "help": "Force re-generate all the metadata."
           },
           {
@@ -518,19 +518,19 @@
           {
             "name": "PreserveRawInlineComments",
             "type": "bool",
-            "format": "--raw={value}",
+            "format": "--raw",
             "help": "Preserve the existing xml comment tags inside 'summary' triple slash comments."
           },
           {
             "name": "PrintHelpMessage",
             "type": "bool",
-            "format": "--help={value}",
+            "format": "--help",
             "help": "Print help message for this sub-command."
           },
           {
             "name": "ShouldSkipMarkup",
             "type": "bool",
-            "format": "--shouldSkipMarkup={value}",
+            "format": "--shouldSkipMarkup",
             "help": "Skip to markup the triple slash comments."
           }
         ]
@@ -567,13 +567,13 @@
           {
             "name": "GeneratesAppendices",
             "type": "bool",
-            "format": "--generatesAppendices={value}",
+            "format": "--generatesAppendices",
             "help": "Specify whether or not to generate appendices for not-in-TOC articles."
           },
           {
             "name": "GeneratesExternalLink",
             "type": "bool",
-            "format": "--generatesExternalLink={value}",
+            "format": "--generatesExternalLink",
             "help": "Specify whether or not to generate external links for PDF."
           },
           {
@@ -585,7 +585,7 @@
           {
             "name": "KeepRawFiles",
             "type": "bool",
-            "format": "--keepRawFiles={value}",
+            "format": "--keepRawFiles",
             "help": "Specify whether or not to keep the intermediate html files that used to generate the PDF file. It it usually used in debug purpose. By default the value is false."
           },
           {
@@ -641,7 +641,7 @@
           {
             "name": "PrintHelpMessage",
             "type": "bool",
-            "format": "--help={value}",
+            "format": "--help",
             "help": "Print help message for this sub-command."
           }
         ]
@@ -663,7 +663,7 @@
           {
             "name": "All",
             "type": "bool",
-            "format": "--all={value}",
+            "format": "--all",
             "help": "If specified, all the available templates will be exported."
           },
           {
@@ -675,7 +675,7 @@
           {
             "name": "PrintHelpMessage",
             "type": "bool",
-            "format": "--help={value}",
+            "format": "--help",
             "help": "Print help message for this sub-command."
           }
         ]
@@ -711,7 +711,7 @@
       {
         "name": "WarningsAsErrors",
         "type": "bool",
-        "format": "--warningsAsErrors={value}",
+        "format": "--warningsAsErrors",
         "help": "Specify if warnings should be treated as errors."
       }
     ],
@@ -730,7 +730,7 @@
       {
         "name": "CleanupCacheHistory",
         "type": "bool",
-        "format": "--cleanupCacheHistory={value}",
+        "format": "--cleanupCacheHistory",
         "help": "If set to true, docfx create a new intermediate folder for cache files, historical cache data will be cleaned up."
       },
       {
@@ -743,31 +743,31 @@
       {
         "name": "DisableGitFeatures",
         "type": "bool",
-        "format": "--disableGitFeatures={value}",
+        "format": "--disableGitFeatures",
         "help": "Disable fetching Git related information for articles. By default it is enabled and may have side effect on performance when the repo is large."
       },
       {
         "name": "DryRun",
         "type": "bool",
-        "format": "--dryRun={value}",
+        "format": "--dryRun",
         "help": "If set to true, template will not be actually applied to the documents. This option is always used with --exportRawModel or --exportViewModel is set so that only raw model files or view model files are generated."
       },
       {
         "name": "EnableDebugMode",
         "type": "bool",
-        "format": "--debug={value}",
+        "format": "--debug",
         "help": "Run in debug mode. With debug mode, raw model and view model will be exported automatically when it encounters error when applying templates. If not specified, it is false."
       },
       {
         "name": "ExportRawModel",
         "type": "bool",
-        "format": "--exportRawModel={value}",
+        "format": "--exportRawModel",
         "help": "If set to true, data model to run template script will be extracted in .raw.model.json extension."
       },
       {
         "name": "ExportViewModel",
         "type": "bool",
-        "format": "--exportViewModel={value}",
+        "format": "--exportViewModel",
         "help": "If set to true, data model to apply template will be extracted in .view.model.json extension."
       },
       {
@@ -792,13 +792,13 @@
       {
         "name": "ForcePostProcess",
         "type": "bool",
-        "format": "--forcePostProcess={value}",
+        "format": "--forcePostProcess",
         "help": "Force to re-process the documentation in post processors. It will be cascaded from force option."
       },
       {
         "name": "ForceRebuild",
         "type": "bool",
-        "format": "--force={value}",
+        "format": "--force",
         "help": "Force re-build all the documentation."
       },
       {
@@ -835,7 +835,7 @@
       {
         "name": "KeepFileLink",
         "type": "bool",
-        "format": "--keepFileLink={value}",
+        "format": "--keepFileLink",
         "help": "If set to true, docfx does not dereference (aka. copy) file to the output folder, instead, it saves a link_to_path property inside mainfiest.json to indicate the physical location of that file."
       },
       {
@@ -865,7 +865,7 @@
       {
         "name": "NoLangKeyword",
         "type": "bool",
-        "format": "--noLangKeyword={value}",
+        "format": "--noLangKeyword",
         "help": "Disable default lang keyword."
       },
       {
@@ -903,7 +903,7 @@
       {
         "name": "PrintHelpMessage",
         "type": "bool",
-        "format": "--help={value}",
+        "format": "--help",
         "help": "Print help message for this sub-command."
       },
       {
@@ -928,7 +928,7 @@
       {
         "name": "Serve",
         "type": "bool",
-        "format": "--serve={value}",
+        "format": "--serve",
         "help": "Host the generated documentation to a website."
       },
       {

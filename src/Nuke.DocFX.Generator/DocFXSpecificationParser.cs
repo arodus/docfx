@@ -48,16 +48,15 @@ namespace Nuke.DocFX.Generator
             var types = assemblies
                 .SelectMany(x => x.MainModule.Types)
                 .ToArray();
-            _commandTypes = 
-                 types
-                .Where(x => x.HasCommandAttribute())
-                .ToArray();
+            _commandTypes =
+                types
+                    .Where(x => x.HasCommandAttribute())
+                    .ToArray();
 
             _commandHelpTexts = types
                 .Select(x => x.GetCommandOptionAttribute())
                 .Where(x => x != null)
                 .ToDictionary(x => GetStringConstructorArgument(x, index: 0), x => GetStringConstructorArgument(x, index: 1).FormatForXmlDoc());
-
 
             string GetStringConstructorArgument(ICustomAttribute attribute, int index) => (string) attribute.ConstructorArguments[index].Value;
         }
@@ -68,7 +67,6 @@ namespace Nuke.DocFX.Generator
             {
                 assemblyDefinition?.Dispose();
             }
-           
         }
 
         protected override List<string> ParseReferences()
@@ -139,7 +137,8 @@ namespace Nuke.DocFX.Generator
                 .ToList()
                 .ForEach(x =>
                 {
-                    if (tool.Enumerations.Any(y => y.Name == x.Type)) x.Type = $"DocFX{x.Type}";
+                    if (tool.Enumerations.Any(y => y.Name == x.Type))
+                        x.Type = $"DocFX{x.Type}";
                 });
 
             tool.Enumerations.ForEach(x => x.Name = $"DocFX{x.Name}");
@@ -180,8 +179,6 @@ namespace Nuke.DocFX.Generator
             return task;
         }
 
-       
-
         private List<Property> ParseProperties(TypeDefinition typeDefinition, [CanBeNull] DataClass dataClass)
         {
             var positionalArguments = new Dictionary<string, int>();
@@ -197,7 +194,7 @@ namespace Nuke.DocFX.Generator
 
                     var isRequired = argumentAttribute.GetPropertyValue<bool>("Required");
                     var separator = argumentAttribute.GetPropertyValue<char?>("Separator");
-                    separator = separator.HasValue && separator.Value == '\0'? null : separator;
+                    separator = separator.HasValue && separator.Value == '\0' ? null : separator;
 
                     string longName = null;
                     string shortName = null;
@@ -235,8 +232,7 @@ namespace Nuke.DocFX.Generator
                         }
                     }
 
-                    var format = $"{(longName == null ? $"-{shortName}:{{value}}" : $"--{longName}")}={{value}}";
-
+                    var format = BuildFormatString(shortName, longName, typeName != "bool");
                     if (position != null)
                     {
                         positionalArguments.Add(name, position.Value);
@@ -258,6 +254,19 @@ namespace Nuke.DocFX.Generator
                 .OrderBy(x => positionalArguments.TryGetValue(x.Name, out var position) ? $"!{position}" : x.Name)
                 .ToList();
             return properties;
+        }
+
+        private static string BuildFormatString([CanBeNull] string shortName, [CanBeNull] string longName, bool includeValue)
+        {
+            var longFormat = longName != null;
+            var name = longFormat ? longName : shortName;
+            var prefix = longFormat ? "--" : "-";
+            var separator = longFormat ? '=' : ':';
+
+            var format = $"{prefix}{name}";
+            if (includeValue)
+                format += $"{separator}{{value}}";
+            return format;
         }
     }
 }

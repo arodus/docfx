@@ -227,39 +227,39 @@ namespace Nuke.DocFX
               .Add("build")
               .Add("{value}", ConfigFile)
               .Add("--changesFile={value}", ChangesFile)
-              .Add("--cleanupCacheHistory={value}", CleanupCacheHistory)
+              .Add("--cleanupCacheHistory", CleanupCacheHistory)
               .Add("--content={value}", Content, separator: ',')
-              .Add("--disableGitFeatures={value}", DisableGitFeatures)
-              .Add("--dryRun={value}", DryRun)
-              .Add("--debug={value}", EnableDebugMode)
-              .Add("--exportRawModel={value}", ExportRawModel)
-              .Add("--exportViewModel={value}", ExportViewModel)
+              .Add("--disableGitFeatures", DisableGitFeatures)
+              .Add("--dryRun", DryRun)
+              .Add("--debug", EnableDebugMode)
+              .Add("--exportRawModel", ExportRawModel)
+              .Add("--exportViewModel", ExportViewModel)
               .Add("--falName={value}", FALName)
               .Add("--fileMetadataFile={value}", FileMetadataFilePath)
               .Add("--fileMetadataFiles={value}", FileMetadataFilePaths, separator: ',')
-              .Add("--forcePostProcess={value}", ForcePostProcess)
-              .Add("--force={value}", ForceRebuild)
+              .Add("--forcePostProcess", ForcePostProcess)
+              .Add("--force", ForceRebuild)
               .Add("--globalMetadata={value}", GlobalMetadata)
               .Add("--globalMetadataFile={value}", GlobalMetadataFilePath)
               .Add("--globalMetadataFiles={value}", GlobalMetadataFilePaths, separator: ',')
               .Add("--hostname={value}", Host)
               .Add("--intermediateFolder={value}", IntermediateFolder)
-              .Add("--keepFileLink={value}", KeepFileLink)
+              .Add("--keepFileLink", KeepFileLink)
               .Add("--lruSize={value}", LruSize)
               .Add("--markdownEngineName={value}", MarkdownEngineName)
               .Add("--markdownEngineProperties={value}", MarkdownEngineProperties)
               .Add("--maxParallelism={value}", MaxParallelism)
-              .Add("--noLangKeyword={value}", NoLangKeyword)
+              .Add("--noLangKeyword", NoLangKeyword)
               .Add("--output={value}", OutputFolder)
               .Add("--debugOutput={value}", OutputFolderForDebugFiles)
               .Add("--overwrite={value}", Overwrite, separator: ',')
               .Add("--port={value}", Port)
               .Add("--postProcessors={value}", PostProcessors, separator: ',')
-              .Add("--help={value}", PrintHelpMessage)
+              .Add("--help", PrintHelpMessage)
               .Add("--rawModelOutputFolder={value}", RawModelOutputFolder)
               .Add("--resource={value}", Resource, separator: ',')
               .Add("--schemaLicense={value}", SchemaLicense)
-              .Add("--serve={value}", Serve)
+              .Add("--serve", Serve)
               .Add("--template={value}", Templates, separator: ',')
               .Add("--theme={value}", Themes, separator: ',')
               .Add("--viewModelOutputFolder={value}", ViewModelOutputFolder)
@@ -268,7 +268,7 @@ namespace Nuke.DocFX
               .Add("--log={value}", LogFilePath)
               .Add("--logLevel={value}", LogLevel)
               .Add("--repositoryRoot={value}", RepoRoot)
-              .Add("--warningsAsErrors={value}", WarningsAsErrors);
+              .Add("--warningsAsErrors", WarningsAsErrors);
             return base.ConfigureArguments(arguments);
         }
     }
@@ -295,7 +295,7 @@ namespace Nuke.DocFX
               .Add("dependency")
               .Add("{value}", DependencyFile)
               .Add("--intermediateFolder={value}", IntermediateFolder)
-              .Add("--help={value}", PrintHelpMessage)
+              .Add("--help", PrintHelpMessage)
               .Add("--version={value}", VersionName);
             return base.ConfigureArguments(arguments);
         }
@@ -320,7 +320,7 @@ namespace Nuke.DocFX
             arguments
               .Add("download")
               .Add("{value}", ArchiveFile)
-              .Add("--help={value}", PrintHelpMessage)
+              .Add("--help", PrintHelpMessage)
               .Add("--xref={value}", Uri);
             return base.ConfigureArguments(arguments);
         }
@@ -374,11 +374,11 @@ namespace Nuke.DocFX
               .Add("init")
               .Add("--apiSourceFolder={value}", ApiSourceFolder)
               .Add("--apiGlobPattern={value}", ApiSourceGlobPattern)
-              .Add("--file={value}", OnlyConfigFile)
+              .Add("--file", OnlyConfigFile)
               .Add("--output={value}", OutputFolder)
-              .Add("--overwrite={value}", Overwrite)
-              .Add("--help={value}", PrintHelpMessage)
-              .Add("--quiet={value}", Quiet);
+              .Add("--overwrite", Overwrite)
+              .Add("--help", PrintHelpMessage)
+              .Add("--quiet", Quiet);
             return base.ConfigureArguments(arguments);
         }
     }
@@ -426,13 +426,13 @@ namespace Nuke.DocFX
               .Add("--fileMetadataFile={value}", FileMetadataFilePath)
               .Add("--globalMetadata={value}", GlobalMetadata)
               .Add("--globalMetadataFile={value}", GlobalMetadataFilePath)
-              .Add("--help={value}", PrintHelpMessage)
+              .Add("--help", PrintHelpMessage)
               .Add("--tocMetadata={value}", TocMetadata, separator: ',')
               .Add("--correlationId={value}", CorrelationId)
               .Add("--log={value}", LogFilePath)
               .Add("--logLevel={value}", LogLevel)
               .Add("--repositoryRoot={value}", RepoRoot)
-              .Add("--warningsAsErrors={value}", WarningsAsErrors);
+              .Add("--warningsAsErrors", WarningsAsErrors);
             return base.ConfigureArguments(arguments);
         }
     }
@@ -485,21 +485,21 @@ namespace Nuke.DocFX
             arguments
               .Add("metadata")
               .Add("{value}", Projects, separator: ' ')
-              .Add("--disableDefaultFilter={value}", DisableDefaultFilter)
-              .Add("--disableGitFeatures={value}", DisableGitFeatures)
+              .Add("--disableDefaultFilter", DisableDefaultFilter)
+              .Add("--disableGitFeatures", DisableGitFeatures)
               .Add("--filter={value}", FilterConfigFile)
-              .Add("--force={value}", ForceRebuild)
+              .Add("--force", ForceRebuild)
               .Add("--globalNamespaceId={value}", GlobalNamespaceId)
               .Add("--property={value}", MSBuildProperties, "{key}={value}", separator: ';')
               .Add("--output={value}", OutputFolder)
-              .Add("--raw={value}", PreserveRawInlineComments)
-              .Add("--help={value}", PrintHelpMessage)
-              .Add("--shouldSkipMarkup={value}", ShouldSkipMarkup)
+              .Add("--raw", PreserveRawInlineComments)
+              .Add("--help", PrintHelpMessage)
+              .Add("--shouldSkipMarkup", ShouldSkipMarkup)
               .Add("--correlationId={value}", CorrelationId)
               .Add("--log={value}", LogFilePath)
               .Add("--logLevel={value}", LogLevel)
               .Add("--repositoryRoot={value}", RepoRoot)
-              .Add("--warningsAsErrors={value}", WarningsAsErrors);
+              .Add("--warningsAsErrors", WarningsAsErrors);
             return base.ConfigureArguments(arguments);
         }
     }
@@ -639,49 +639,49 @@ namespace Nuke.DocFX
               .Add("--basePath={value}", BasePath)
               .Add("--css={value}", CssFilePath)
               .Add("--excludedTocs={value}", ExcludedTocs)
-              .Add("--generatesAppendices={value}", GeneratesAppendices)
-              .Add("--generatesExternalLink={value}", GeneratesExternalLink)
+              .Add("--generatesAppendices", GeneratesAppendices)
+              .Add("--generatesExternalLink", GeneratesExternalLink)
               .Add("--host={value}", PdfHost)
-              .Add("--keepRawFiles={value}", KeepRawFiles)
+              .Add("--keepRawFiles", KeepRawFiles)
               .Add("--errorHandling={value}", LoadErrorHandling)
               .Add("--locale={value}", Locale)
               .Add("--name={value}", Name)
               .Add("--rawOutputFolder={value}", RawOutputFolder)
               .Add("{value}", ConfigFile)
               .Add("--changesFile={value}", ChangesFile)
-              .Add("--cleanupCacheHistory={value}", CleanupCacheHistory)
+              .Add("--cleanupCacheHistory", CleanupCacheHistory)
               .Add("--content={value}", Content, separator: ',')
-              .Add("--disableGitFeatures={value}", DisableGitFeatures)
-              .Add("--dryRun={value}", DryRun)
-              .Add("--debug={value}", EnableDebugMode)
-              .Add("--exportRawModel={value}", ExportRawModel)
-              .Add("--exportViewModel={value}", ExportViewModel)
+              .Add("--disableGitFeatures", DisableGitFeatures)
+              .Add("--dryRun", DryRun)
+              .Add("--debug", EnableDebugMode)
+              .Add("--exportRawModel", ExportRawModel)
+              .Add("--exportViewModel", ExportViewModel)
               .Add("--falName={value}", FALName)
               .Add("--fileMetadataFile={value}", FileMetadataFilePath)
               .Add("--fileMetadataFiles={value}", FileMetadataFilePaths, separator: ',')
-              .Add("--forcePostProcess={value}", ForcePostProcess)
-              .Add("--force={value}", ForceRebuild)
+              .Add("--forcePostProcess", ForcePostProcess)
+              .Add("--force", ForceRebuild)
               .Add("--globalMetadata={value}", GlobalMetadata)
               .Add("--globalMetadataFile={value}", GlobalMetadataFilePath)
               .Add("--globalMetadataFiles={value}", GlobalMetadataFilePaths, separator: ',')
               .Add("--hostname={value}", Host)
               .Add("--intermediateFolder={value}", IntermediateFolder)
-              .Add("--keepFileLink={value}", KeepFileLink)
+              .Add("--keepFileLink", KeepFileLink)
               .Add("--lruSize={value}", LruSize)
               .Add("--markdownEngineName={value}", MarkdownEngineName)
               .Add("--markdownEngineProperties={value}", MarkdownEngineProperties)
               .Add("--maxParallelism={value}", MaxParallelism)
-              .Add("--noLangKeyword={value}", NoLangKeyword)
+              .Add("--noLangKeyword", NoLangKeyword)
               .Add("--output={value}", OutputFolder)
               .Add("--debugOutput={value}", OutputFolderForDebugFiles)
               .Add("--overwrite={value}", Overwrite, separator: ',')
               .Add("--port={value}", Port)
               .Add("--postProcessors={value}", PostProcessors, separator: ',')
-              .Add("--help={value}", PrintHelpMessage)
+              .Add("--help", PrintHelpMessage)
               .Add("--rawModelOutputFolder={value}", RawModelOutputFolder)
               .Add("--resource={value}", Resource, separator: ',')
               .Add("--schemaLicense={value}", SchemaLicense)
-              .Add("--serve={value}", Serve)
+              .Add("--serve", Serve)
               .Add("--template={value}", Templates, separator: ',')
               .Add("--theme={value}", Themes, separator: ',')
               .Add("--viewModelOutputFolder={value}", ViewModelOutputFolder)
@@ -690,7 +690,7 @@ namespace Nuke.DocFX
               .Add("--log={value}", LogFilePath)
               .Add("--logLevel={value}", LogLevel)
               .Add("--repositoryRoot={value}", RepoRoot)
-              .Add("--warningsAsErrors={value}", WarningsAsErrors);
+              .Add("--warningsAsErrors", WarningsAsErrors);
             return base.ConfigureArguments(arguments);
         }
     }
@@ -718,7 +718,7 @@ namespace Nuke.DocFX
               .Add("{value}", Folder)
               .Add("--hostname={value}", Host)
               .Add("--port={value}", Port)
-              .Add("--help={value}", PrintHelpMessage);
+              .Add("--help", PrintHelpMessage);
             return base.ConfigureArguments(arguments);
         }
     }
@@ -745,9 +745,9 @@ namespace Nuke.DocFX
             arguments
               .Add("template")
               .Add("{value}", Command, separator: ' ')
-              .Add("--all={value}", All)
+              .Add("--all", All)
               .Add("--output={value}", OutputFolder)
-              .Add("--help={value}", PrintHelpMessage);
+              .Add("--help", PrintHelpMessage);
             return base.ConfigureArguments(arguments);
         }
     }
