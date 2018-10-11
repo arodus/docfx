@@ -27,7 +27,6 @@ namespace Nuke.DocFX.Generator
         protected abstract string ToolName { get; }
         protected abstract string Help { get; }
         protected abstract string OfficialUrl { get; }
-        protected abstract string[] License { get; }
 
         protected abstract ISpecificationParser CreateSpecificationParser();
 
@@ -35,7 +34,8 @@ namespace Nuke.DocFX.Generator
         {
             Console.WriteLine($"Generating {ToolName} specifications...");
 
-            var tool = GenerateTool(PathConstruction.Combine(_outputFolder, $"{ToolName}.json"));
+            var specificationFile = PathConstruction.Combine(_outputFolder, $"{ToolName}.json");
+            var tool = GenerateTool(specificationFile);
             using (var parser = CreateSpecificationParser())
             {
                 parser.Populate(tool);
@@ -47,7 +47,7 @@ namespace Nuke.DocFX.Generator
                 SpecificationModifier.OverwriteFromFile(tool, _overwriteFilePath);
 
             Directory.CreateDirectory(_outputFolder);
-            ToolSerializer.Save(tool);
+            ToolSerializer.Save(tool, specificationFile);
 
             Console.WriteLine();
             Console.WriteLine("Generation finished.");
@@ -59,7 +59,6 @@ namespace Nuke.DocFX.Generator
         }
 
         protected virtual string PathExecutable => null;
-        protected virtual string EnvironmentExecutable => null;
         protected virtual string PackageId => null;
         protected virtual string PackageExecutable => null;
         protected virtual bool CustomExecutable => false;
@@ -70,13 +69,11 @@ namespace Nuke.DocFX.Generator
                        {
                            Name = ToolName,
                            CustomExecutable = CustomExecutable,
-                           License = License,
                            OfficialUrl = OfficialUrl,
-                           EnvironmentExecutable = EnvironmentExecutable,
                            PackageExecutable = PackageExecutable,
                            PathExecutable = PathExecutable,
                            PackageId = PackageId,
-                           DefinitionFile = specificationFilePath,
+                           SpecificationFile = specificationFilePath,
                            Help = Help
                        };
             return tool;

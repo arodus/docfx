@@ -9,6 +9,7 @@ using Nuke.Common;
 using Nuke.Common.ChangeLog;
 using Nuke.Common.Git;
 using Nuke.Common.ProjectModel;
+using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitVersion;
 using Nuke.Common.Utilities;
@@ -39,9 +40,12 @@ partial class Build : NukeBuild
     [GitVersion] readonly GitVersion GitVersion;
     [Solution] readonly Solution Solution;
 
+    [Parameter] readonly string Configuration = IsLocalBuild ? "Debug" : "Release";
     [Parameter("Api key to push packages to NuGet.org.")] readonly string NuGetApiKey;
     [Parameter("Api key to access the GitHub.")] readonly string GitHubApiKey;
 
+    AbsolutePath SourceDirectory => RootDirectory / "src";
+    AbsolutePath OutputDirectory => RootDirectory / "output";
     ChangeLog ChangeLogContent => ReadChangelog(ChangelogFile);
     Nuke.Common.ProjectModel.Project AddonProject => Solution.GetProject(c_toolNamespace).NotNull();
     AbsolutePath PackageDirectory => TemporaryDirectory / "packages";
@@ -57,10 +61,15 @@ partial class Build : NukeBuild
         .DependsOn(GenerateAddon, Clean)
         .Executes(() =>
         {
-            DotNetRestore(x => DefaultDotNetRestore
+            DotNetRestore(x => x
                 .SetProjectFile(AddonProject));
-            DotNetBuild(x => DefaultDotNetBuild
-                .SetProjectFile(AddonProject));
+            DotNetBuild(x => x
+                .SetProjectFile(AddonProject)
+                .EnableNoRestore()
+                .SetConfiguration(Configuration)
+                .SetAssemblyVersion(GitVersion.GetNormalizedAssemblyVersion())
+                .SetFileVersion(GitVersion.GetNormalizedFileVersion())
+                .SetInformationalVersion(GitVersion.InformationalVersion));
         });
 
     Target Pack => _ => _
@@ -73,10 +82,12 @@ partial class Build : NukeBuild
                 .Concat($"Full changelog at {GitRepository.GetGitHubBrowseUrl(ChangelogFile)}")
                 .JoinNewLine();
 
-            DotNetPack(s => DefaultDotNetPack
+            DotNetPack(s => s
                 .SetProject(AddonProject)
                 .EnableNoBuild()
-                .EnableNoRestore()
+                .SetConfiguration(Configuration)
+                .EnableIncludeSymbols()
+                .SetOutputDirectory(OutputDirectory)
                 .SetVersion(GitVersion.NuGetVersionV2)
                 .SetPackageReleaseNotes(releaseNotes));
         });

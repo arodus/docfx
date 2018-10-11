@@ -34,16 +34,7 @@ namespace Nuke.DocFX.Generator
 
         protected override string PackageId => "docfx.console";
         protected override string PackageExecutable => "docfx.exe";
-
-
         protected override string OfficialUrl => "https://dotnet.github.io/docfx/";
-
-        protected override string[] License => new[]
-                                               {
-                                                   $"Copyright Sebastian Karasek, Matthias Koch {DateTime.Now.Year}.",
-                                                   "Distributed under the MIT License.",
-                                                   "https://github.com/nuke-build/docfx/blob/master/LICENSE"
-                                               };
 
         protected override ISpecificationParser CreateSpecificationParser()
         {
