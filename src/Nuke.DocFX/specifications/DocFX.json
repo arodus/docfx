@@ -6,16 +6,16 @@
     "https://github.com/nuke-build/docfx/blob/master/LICENSE"
   ],
   "references": [
-    "https://raw.githubusercontent.com/dotnet/docfx/v2.39.2/src/docfx/Models/BuildCommandOptions.cs",
-    "https://raw.githubusercontent.com/dotnet/docfx/v2.39.2/src/docfx/Models/DependencyCommandOptions.cs",
-    "https://raw.githubusercontent.com/dotnet/docfx/v2.39.2/src/docfx/Models/DownloadCommandOptions.cs",
-    "https://raw.githubusercontent.com/dotnet/docfx/v2.39.2/src/docfx/Models/HelpCommandOptions.cs",
-    "https://raw.githubusercontent.com/dotnet/docfx/v2.39.2/src/docfx/Models/InitCommandOptions.cs",
-    "https://raw.githubusercontent.com/dotnet/docfx/v2.39.2/src/docfx/Models/MergeCommandOptions.cs",
-    "https://raw.githubusercontent.com/dotnet/docfx/v2.39.2/src/docfx/Models/MetadataCommandOptions.cs",
-    "https://raw.githubusercontent.com/dotnet/docfx/v2.39.2/src/docfx/Models/PdfCommandOptions.cs",
-    "https://raw.githubusercontent.com/dotnet/docfx/v2.39.2/src/docfx/Models/ServeCommandOptions.cs",
-    "https://raw.githubusercontent.com/dotnet/docfx/v2.39.2/src/docfx/Models/TemplateCommandOptions.cs"
+    "https://raw.githubusercontent.com/dotnet/docfx/v2.40/src/docfx/Models/BuildCommandOptions.cs",
+    "https://raw.githubusercontent.com/dotnet/docfx/v2.40/src/docfx/Models/DependencyCommandOptions.cs",
+    "https://raw.githubusercontent.com/dotnet/docfx/v2.40/src/docfx/Models/DownloadCommandOptions.cs",
+    "https://raw.githubusercontent.com/dotnet/docfx/v2.40/src/docfx/Models/HelpCommandOptions.cs",
+    "https://raw.githubusercontent.com/dotnet/docfx/v2.40/src/docfx/Models/InitCommandOptions.cs",
+    "https://raw.githubusercontent.com/dotnet/docfx/v2.40/src/docfx/Models/MergeCommandOptions.cs",
+    "https://raw.githubusercontent.com/dotnet/docfx/v2.40/src/docfx/Models/MetadataCommandOptions.cs",
+    "https://raw.githubusercontent.com/dotnet/docfx/v2.40/src/docfx/Models/PdfCommandOptions.cs",
+    "https://raw.githubusercontent.com/dotnet/docfx/v2.40/src/docfx/Models/ServeCommandOptions.cs",
+    "https://raw.githubusercontent.com/dotnet/docfx/v2.40/src/docfx/Models/TemplateCommandOptions.cs"
   ],
   "name": "DocFX",
   "officialUrl": "https://dotnet.github.io/docfx/",
