@@ -69,15 +69,6 @@ namespace Nuke.DocFX.Generator
             }
         }
 
-        protected override List<string> ParseReferences()
-        {
-            string GetGitHubUrl(string name) => $"https://raw.githubusercontent.com/dotnet/docfx/{_gitReference}/src/docfx/Models/{name}.cs";
-
-            return _commandTypes
-                .Select(x => GetGitHubUrl(x.Name))
-                .ToList();
-        }
-
         protected override List<Task> ParseTasks(Tool tool)
         {
             return _commandTypes
@@ -244,7 +235,6 @@ namespace Nuke.DocFX.Generator
                                Name = name,
                                Type = typeName,
                                Help = argumentAttribute.GetPropertyValue<string>("HelpText").FormatForXmlDoc(),
-                               Assertion = isRequired ? AssertionType.NotNull : default(AssertionType?),
                                Format = format,
                                Separator = separator == default(char) || separator == '\0' ? default(char?) : separator,
                                ItemFormat = typeName.StartsWith("Dictionary<") ? "{key}={value}" : null,

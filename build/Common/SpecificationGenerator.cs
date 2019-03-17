@@ -47,7 +47,7 @@ namespace Nuke.DocFX.Generator
                 SpecificationModifier.OverwriteFromFile(tool, _overwriteFilePath);
 
             Directory.CreateDirectory(_outputFolder);
-            ToolSerializer.Save(tool);
+            ToolSerializer.Save(tool, tool.SpecificationFile);
 
             Console.WriteLine();
             Console.WriteLine("Generation finished.");
@@ -70,13 +70,11 @@ namespace Nuke.DocFX.Generator
                        {
                            Name = ToolName,
                            CustomExecutable = CustomExecutable,
-                           License = License,
                            OfficialUrl = OfficialUrl,
-                           EnvironmentExecutable = EnvironmentExecutable,
                            PackageExecutable = PackageExecutable,
                            PathExecutable = PathExecutable,
                            PackageId = PackageId,
-                           DefinitionFile = specificationFilePath,
+                           SpecificationFile = specificationFilePath,
                            Help = Help
                        };
             return tool;

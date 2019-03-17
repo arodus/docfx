@@ -12,7 +12,6 @@ namespace Nuke.DocFX.Generator
     public abstract class SpecificationParser : ISpecificationParser
     {
         public abstract void Dispose();
-        protected abstract List<string> ParseReferences();
         protected abstract List<Task> ParseTasks(Tool tool);
 
         protected virtual List<Enumeration> ParseEnumerations()
@@ -41,7 +40,6 @@ namespace Nuke.DocFX.Generator
 
         public void Populate(Tool tool)
         {
-            tool.References = ParseReferences();
             tool.Tasks = ParseTasks(tool);
             tool.CommonTaskProperties = ParseCommonTaskProperties();
             tool.CommonTaskPropertySets = ParseCommonTaskPropertySets();

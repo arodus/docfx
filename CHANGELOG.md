@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.1.1] / 2018-09-22
 - Changed format of boolean arguments.
+
 ## [0.1.0] / 2018-09-19
 - First release. Supported version: [DocFX v2.39.2](https://github.com/dotnet/docfx/releases/tag/v2.39.2).
 
