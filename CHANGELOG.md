@@ -6,13 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [vNext]
 
+## [0.2.0] / 2019-03-22
+- Updated for Nuke.Common
+
 ## [0.1.1] / 2018-09-22
-- Changed format of boolean arguments.
+- Changed format of boolean arguments
 
 ## [0.1.0] / 2018-09-19
-- First release. Supported version: [DocFX v2.39.2](https://github.com/dotnet/docfx/releases/tag/v2.39.2).
+- First release. Supported version: [DocFX v2.39.2](https://github.com/dotnet/docfx/releases/tag/v2.39.2)
 
-[vNext]: https://github.com/nuke-build/docfx/compare/0.1.1...HEAD
+[vNext]: https://github.com/nuke-build/docfx/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/nuke-build/docfx/compare/0.1.1...0.2.0
 [0.1.1]: https://github.com/nuke-build/docfx/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/nuke-build/docfx/tree/0.1.0
 
