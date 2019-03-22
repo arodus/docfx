@@ -41,9 +41,9 @@ partial class Build : NukeBuild
 
     [Solution] readonly Solution Solution;
     [GitRepository] readonly GitRepository GitRepository;
-    [GitVersion] readonly GitVersion GitVersion;
+    // [GitVersion] readonly GitVersion GitVersion;
 
-    string SemanticVersion => GitVersion.MajorMinorPatch;
+    [Parameter] readonly string SemanticVersion;
 
     AbsolutePath SourceDirectory => RootDirectory / "src";
     AbsolutePath OutputDirectory => RootDirectory / "output";
@@ -88,9 +88,6 @@ partial class Build : NukeBuild
                 .SetProjectFile(Solution)
                 .EnableNoRestore()
                 .SetConfiguration(Configuration)
-                .SetAssemblyVersion(GitVersion.GetNormalizedAssemblyVersion())
-                .SetFileVersion(GitVersion.GetNormalizedFileVersion())
-                .SetInformationalVersion(GitVersion.InformationalVersion)
                 .SetProperty("ReplacePackageReferences", false));
         });
 
@@ -140,13 +137,14 @@ partial class Build : NukeBuild
                 .EnableIncludeSymbols()
                 .SetSymbolPackageFormat(DotNetSymbolPackageFormat.snupkg)
                 .SetOutputDirectory(OutputDirectory)
-                .SetVersion(GitVersion.NuGetVersionV2)
+                .SetVersion(SemanticVersion)
                 .SetPackageReleaseNotes(GetNuGetReleaseNotes(ChangelogFile, GitRepository)));
         });
 
     Target Publish => _ => _
         .DependsOn(Changelog)
         .DependsOn(Pack)
+        .Requires(() => SemanticVersion)
         .Requires(() => ApiKey)
         .Requires(() => GitHasCleanWorkingCopy())
         .Requires(() => Configuration.Equals(Configuration.Release))
