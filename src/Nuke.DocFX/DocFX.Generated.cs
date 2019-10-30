@@ -1,5 +1,5 @@
 // Generated from https://github.com/nuke-build/docfx/blob/master/src/Nuke.DocFX/DocFX.json
-// Generated with Nuke.CodeGeneration version 0.17.7 (OSX,.NETStandard,Version=v2.0)
+// Generated with Nuke.CodeGeneration version 0.22.2 (OSX,.NETStandard,Version=v2.0)
 
 using JetBrains.Annotations;
 using Newtonsoft.Json;
@@ -19,6 +19,10 @@ using System.Text;
 
 namespace Nuke.DocFX
 {
+    /// <summary>
+    ///   <p>DocFX is an API documentation generator for .NET, and currently it supports C# and VB. It generates API reference documentation from triple-slash comments in your source code. It also allows you to use Markdown files to create additional topics such as tutorials and how-tos, and to customize the generated reference documentation. DocFX builds a static HTML website from your source code and Markdown files, which can be easily hosted on any web servers (for example, <em>github.io</em>). Also, DocFX provides you the flexibility to customize the layout and style of your website through templates. If you are interested in creating your own website with your own styles, you can follow <a href="http://dotnet.github.io/docfx/tutorial/howto_create_custom_template.html">how to create custom template</a> to create custom templates.</p>
+    ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+    /// </summary>
     [PublicAPI]
     [ExcludeFromCodeCoverage]
     public static partial class DocFXTasks
@@ -31,7 +35,8 @@ namespace Nuke.DocFX
             ToolPathResolver.GetPackageExecutable("docfx.console", "docfx.exe");
         public static Action<OutputType, string> DocFXLogger { get; set; } = ProcessTasks.DefaultLogger;
         /// <summary>
-        ///   DocFX is an API documentation generator for .NET, and currently it supports C# and VB. It generates API reference documentation from triple-slash comments in your source code. It also allows you to use Markdown files to create additional topics such as tutorials and how-tos, and to customize the generated reference documentation. DocFX builds a static HTML website from your source code and Markdown files, which can be easily hosted on any web servers (for example, <em>github.io</em>). Also, DocFX provides you the flexibility to customize the layout and style of your website through templates. If you are interested in creating your own website with your own styles, you can follow <a href="http://dotnet.github.io/docfx/tutorial/howto_create_custom_template.html">how to create custom template</a> to create custom templates.
+        ///   <p>DocFX is an API documentation generator for .NET, and currently it supports C# and VB. It generates API reference documentation from triple-slash comments in your source code. It also allows you to use Markdown files to create additional topics such as tutorials and how-tos, and to customize the generated reference documentation. DocFX builds a static HTML website from your source code and Markdown files, which can be easily hosted on any web servers (for example, <em>github.io</em>). Also, DocFX provides you the flexibility to customize the layout and style of your website through templates. If you are interested in creating your own website with your own styles, you can follow <a href="http://dotnet.github.io/docfx/tutorial/howto_create_custom_template.html">how to create custom template</a> to create custom templates.</p>
+        ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
         public static IReadOnlyCollection<Output> DocFX(string arguments, string workingDirectory = null, IReadOnlyDictionary<string, string> environmentVariables = null, int? timeout = null, bool? logOutput = null, bool? logInvocation = null, Func<string, string> outputFilter = null)
         {
@@ -43,6 +48,55 @@ namespace Nuke.DocFX
         ///   <p>Generate client-only website combining API in YAML files and conceptual files.</p>
         ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
+        /// <remarks>
+        ///   <p>This is a <a href="http://www.nuke.build/docs/authoring-builds/cli-tools.html#fluent-apis">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+        ///   <ul>
+        ///     <li><c>&lt;configFile&gt;</c> via <see cref="DocFXBuildSettings.ConfigFile"/></li>
+        ///     <li><c>--changesFile</c> via <see cref="DocFXBuildSettings.ChangesFile"/></li>
+        ///     <li><c>--cleanupCacheHistory</c> via <see cref="DocFXBuildSettings.CleanupCacheHistory"/></li>
+        ///     <li><c>--content</c> via <see cref="DocFXBuildSettings.Content"/></li>
+        ///     <li><c>--correlationId</c> via <see cref="DocFXBuildSettings.CorrelationId"/></li>
+        ///     <li><c>--debug</c> via <see cref="DocFXBuildSettings.EnableDebugMode"/></li>
+        ///     <li><c>--debugOutput</c> via <see cref="DocFXBuildSettings.OutputFolderForDebugFiles"/></li>
+        ///     <li><c>--disableGitFeatures</c> via <see cref="DocFXBuildSettings.DisableGitFeatures"/></li>
+        ///     <li><c>--dryRun</c> via <see cref="DocFXBuildSettings.DryRun"/></li>
+        ///     <li><c>--exportRawModel</c> via <see cref="DocFXBuildSettings.ExportRawModel"/></li>
+        ///     <li><c>--exportViewModel</c> via <see cref="DocFXBuildSettings.ExportViewModel"/></li>
+        ///     <li><c>--falName</c> via <see cref="DocFXBuildSettings.FALName"/></li>
+        ///     <li><c>--fileMetadataFile</c> via <see cref="DocFXBuildSettings.FileMetadataFilePath"/></li>
+        ///     <li><c>--fileMetadataFiles</c> via <see cref="DocFXBuildSettings.FileMetadataFilePaths"/></li>
+        ///     <li><c>--force</c> via <see cref="DocFXBuildSettings.ForceRebuild"/></li>
+        ///     <li><c>--forcePostProcess</c> via <see cref="DocFXBuildSettings.ForcePostProcess"/></li>
+        ///     <li><c>--globalMetadata</c> via <see cref="DocFXBuildSettings.GlobalMetadata"/></li>
+        ///     <li><c>--globalMetadataFile</c> via <see cref="DocFXBuildSettings.GlobalMetadataFilePath"/></li>
+        ///     <li><c>--globalMetadataFiles</c> via <see cref="DocFXBuildSettings.GlobalMetadataFilePaths"/></li>
+        ///     <li><c>--help</c> via <see cref="DocFXBuildSettings.PrintHelpMessage"/></li>
+        ///     <li><c>--hostname</c> via <see cref="DocFXBuildSettings.Host"/></li>
+        ///     <li><c>--intermediateFolder</c> via <see cref="DocFXBuildSettings.IntermediateFolder"/></li>
+        ///     <li><c>--keepFileLink</c> via <see cref="DocFXBuildSettings.KeepFileLink"/></li>
+        ///     <li><c>--log</c> via <see cref="DocFXBuildSettings.LogFilePath"/></li>
+        ///     <li><c>--logLevel</c> via <see cref="DocFXBuildSettings.LogLevel"/></li>
+        ///     <li><c>--lruSize</c> via <see cref="DocFXBuildSettings.LruSize"/></li>
+        ///     <li><c>--markdownEngineName</c> via <see cref="DocFXBuildSettings.MarkdownEngineName"/></li>
+        ///     <li><c>--markdownEngineProperties</c> via <see cref="DocFXBuildSettings.MarkdownEngineProperties"/></li>
+        ///     <li><c>--maxParallelism</c> via <see cref="DocFXBuildSettings.MaxParallelism"/></li>
+        ///     <li><c>--noLangKeyword</c> via <see cref="DocFXBuildSettings.NoLangKeyword"/></li>
+        ///     <li><c>--output</c> via <see cref="DocFXBuildSettings.OutputFolder"/></li>
+        ///     <li><c>--overwrite</c> via <see cref="DocFXBuildSettings.Overwrite"/></li>
+        ///     <li><c>--port</c> via <see cref="DocFXBuildSettings.Port"/></li>
+        ///     <li><c>--postProcessors</c> via <see cref="DocFXBuildSettings.PostProcessors"/></li>
+        ///     <li><c>--rawModelOutputFolder</c> via <see cref="DocFXBuildSettings.RawModelOutputFolder"/></li>
+        ///     <li><c>--repositoryRoot</c> via <see cref="DocFXBuildSettings.RepoRoot"/></li>
+        ///     <li><c>--resource</c> via <see cref="DocFXBuildSettings.Resource"/></li>
+        ///     <li><c>--schemaLicense</c> via <see cref="DocFXBuildSettings.SchemaLicense"/></li>
+        ///     <li><c>--serve</c> via <see cref="DocFXBuildSettings.Serve"/></li>
+        ///     <li><c>--template</c> via <see cref="DocFXBuildSettings.Templates"/></li>
+        ///     <li><c>--theme</c> via <see cref="DocFXBuildSettings.Themes"/></li>
+        ///     <li><c>--viewModelOutputFolder</c> via <see cref="DocFXBuildSettings.ViewModelOutputFolder"/></li>
+        ///     <li><c>--warningsAsErrors</c> via <see cref="DocFXBuildSettings.WarningsAsErrors"/></li>
+        ///     <li><c>--xref</c> via <see cref="DocFXBuildSettings.XRefMaps"/></li>
+        ///   </ul>
+        /// </remarks>
         public static IReadOnlyCollection<Output> DocFXBuild(DocFXBuildSettings toolSettings = null)
         {
             toolSettings = toolSettings ?? new DocFXBuildSettings();
@@ -168,6 +222,15 @@ namespace Nuke.DocFX
         ///   <p>Export dependency file.</p>
         ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
+        /// <remarks>
+        ///   <p>This is a <a href="http://www.nuke.build/docs/authoring-builds/cli-tools.html#fluent-apis">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+        ///   <ul>
+        ///     <li><c>&lt;dependencyFile&gt;</c> via <see cref="DocFXDependencySettings.DependencyFile"/></li>
+        ///     <li><c>--help</c> via <see cref="DocFXDependencySettings.PrintHelpMessage"/></li>
+        ///     <li><c>--intermediateFolder</c> via <see cref="DocFXDependencySettings.IntermediateFolder"/></li>
+        ///     <li><c>--version</c> via <see cref="DocFXDependencySettings.VersionName"/></li>
+        ///   </ul>
+        /// </remarks>
         public static IReadOnlyCollection<Output> DocFXDependency(DocFXDependencySettings toolSettings = null)
         {
             toolSettings = toolSettings ?? new DocFXDependencySettings();
@@ -213,6 +276,14 @@ namespace Nuke.DocFX
         ///   <p>Download remote xref map file and create an xref archive in local.</p>
         ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
+        /// <remarks>
+        ///   <p>This is a <a href="http://www.nuke.build/docs/authoring-builds/cli-tools.html#fluent-apis">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+        ///   <ul>
+        ///     <li><c>&lt;archiveFile&gt;</c> via <see cref="DocFXDownloadSettings.ArchiveFile"/></li>
+        ///     <li><c>--help</c> via <see cref="DocFXDownloadSettings.PrintHelpMessage"/></li>
+        ///     <li><c>--xref</c> via <see cref="DocFXDownloadSettings.Uri"/></li>
+        ///   </ul>
+        /// </remarks>
         public static IReadOnlyCollection<Output> DocFXDownload(DocFXDownloadSettings toolSettings = null)
         {
             toolSettings = toolSettings ?? new DocFXDownloadSettings();
@@ -256,6 +327,12 @@ namespace Nuke.DocFX
         ///   <p>Get an overall guide for the command and sub-commands.</p>
         ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
+        /// <remarks>
+        ///   <p>This is a <a href="http://www.nuke.build/docs/authoring-builds/cli-tools.html#fluent-apis">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+        ///   <ul>
+        ///     <li><c>&lt;command&gt;</c> via <see cref="DocFXHelpSettings.Command"/></li>
+        ///   </ul>
+        /// </remarks>
         public static IReadOnlyCollection<Output> DocFXHelp(DocFXHelpSettings toolSettings = null)
         {
             toolSettings = toolSettings ?? new DocFXHelpSettings();
@@ -295,6 +372,18 @@ namespace Nuke.DocFX
         ///   <p>Generate an initial docfx.json following the instructions.</p>
         ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
+        /// <remarks>
+        ///   <p>This is a <a href="http://www.nuke.build/docs/authoring-builds/cli-tools.html#fluent-apis">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+        ///   <ul>
+        ///     <li><c>--apiGlobPattern</c> via <see cref="DocFXInitSettings.ApiSourceGlobPattern"/></li>
+        ///     <li><c>--apiSourceFolder</c> via <see cref="DocFXInitSettings.ApiSourceFolder"/></li>
+        ///     <li><c>--file</c> via <see cref="DocFXInitSettings.OnlyConfigFile"/></li>
+        ///     <li><c>--help</c> via <see cref="DocFXInitSettings.PrintHelpMessage"/></li>
+        ///     <li><c>--output</c> via <see cref="DocFXInitSettings.OutputFolder"/></li>
+        ///     <li><c>--overwrite</c> via <see cref="DocFXInitSettings.Overwrite"/></li>
+        ///     <li><c>--quiet</c> via <see cref="DocFXInitSettings.Quiet"/></li>
+        ///   </ul>
+        /// </remarks>
         public static IReadOnlyCollection<Output> DocFXInit(DocFXInitSettings toolSettings = null)
         {
             toolSettings = toolSettings ?? new DocFXInitSettings();
@@ -346,6 +435,23 @@ namespace Nuke.DocFX
         ///   <p>Merge .net base API in YAML files and toc files.</p>
         ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
+        /// <remarks>
+        ///   <p>This is a <a href="http://www.nuke.build/docs/authoring-builds/cli-tools.html#fluent-apis">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+        ///   <ul>
+        ///     <li><c>&lt;configFile&gt;</c> via <see cref="DocFXMergeSettings.ConfigFile"/></li>
+        ///     <li><c>--content</c> via <see cref="DocFXMergeSettings.Content"/></li>
+        ///     <li><c>--correlationId</c> via <see cref="DocFXMergeSettings.CorrelationId"/></li>
+        ///     <li><c>--fileMetadataFile</c> via <see cref="DocFXMergeSettings.FileMetadataFilePath"/></li>
+        ///     <li><c>--globalMetadata</c> via <see cref="DocFXMergeSettings.GlobalMetadata"/></li>
+        ///     <li><c>--globalMetadataFile</c> via <see cref="DocFXMergeSettings.GlobalMetadataFilePath"/></li>
+        ///     <li><c>--help</c> via <see cref="DocFXMergeSettings.PrintHelpMessage"/></li>
+        ///     <li><c>--log</c> via <see cref="DocFXMergeSettings.LogFilePath"/></li>
+        ///     <li><c>--logLevel</c> via <see cref="DocFXMergeSettings.LogLevel"/></li>
+        ///     <li><c>--repositoryRoot</c> via <see cref="DocFXMergeSettings.RepoRoot"/></li>
+        ///     <li><c>--tocMetadata</c> via <see cref="DocFXMergeSettings.TocMetadata"/></li>
+        ///     <li><c>--warningsAsErrors</c> via <see cref="DocFXMergeSettings.WarningsAsErrors"/></li>
+        ///   </ul>
+        /// </remarks>
         public static IReadOnlyCollection<Output> DocFXMerge(DocFXMergeSettings toolSettings = null)
         {
             toolSettings = toolSettings ?? new DocFXMergeSettings();
@@ -407,6 +513,27 @@ namespace Nuke.DocFX
         ///   <p>Generate YAML files from source code.</p>
         ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
+        /// <remarks>
+        ///   <p>This is a <a href="http://www.nuke.build/docs/authoring-builds/cli-tools.html#fluent-apis">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+        ///   <ul>
+        ///     <li><c>&lt;projects&gt;</c> via <see cref="DocFXMetadataSettings.Projects"/></li>
+        ///     <li><c>--correlationId</c> via <see cref="DocFXMetadataSettings.CorrelationId"/></li>
+        ///     <li><c>--disableDefaultFilter</c> via <see cref="DocFXMetadataSettings.DisableDefaultFilter"/></li>
+        ///     <li><c>--disableGitFeatures</c> via <see cref="DocFXMetadataSettings.DisableGitFeatures"/></li>
+        ///     <li><c>--filter</c> via <see cref="DocFXMetadataSettings.FilterConfigFile"/></li>
+        ///     <li><c>--force</c> via <see cref="DocFXMetadataSettings.ForceRebuild"/></li>
+        ///     <li><c>--globalNamespaceId</c> via <see cref="DocFXMetadataSettings.GlobalNamespaceId"/></li>
+        ///     <li><c>--help</c> via <see cref="DocFXMetadataSettings.PrintHelpMessage"/></li>
+        ///     <li><c>--log</c> via <see cref="DocFXMetadataSettings.LogFilePath"/></li>
+        ///     <li><c>--logLevel</c> via <see cref="DocFXMetadataSettings.LogLevel"/></li>
+        ///     <li><c>--output</c> via <see cref="DocFXMetadataSettings.OutputFolder"/></li>
+        ///     <li><c>--property</c> via <see cref="DocFXMetadataSettings.MSBuildProperties"/></li>
+        ///     <li><c>--raw</c> via <see cref="DocFXMetadataSettings.PreserveRawInlineComments"/></li>
+        ///     <li><c>--repositoryRoot</c> via <see cref="DocFXMetadataSettings.RepoRoot"/></li>
+        ///     <li><c>--shouldSkipMarkup</c> via <see cref="DocFXMetadataSettings.ShouldSkipMarkup"/></li>
+        ///     <li><c>--warningsAsErrors</c> via <see cref="DocFXMetadataSettings.WarningsAsErrors"/></li>
+        ///   </ul>
+        /// </remarks>
         public static IReadOnlyCollection<Output> DocFXMetadata(DocFXMetadataSettings toolSettings = null)
         {
             toolSettings = toolSettings ?? new DocFXMetadataSettings();
@@ -476,6 +603,67 @@ namespace Nuke.DocFX
         ///   <p>Generate pdf file.</p>
         ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
+        /// <remarks>
+        ///   <p>This is a <a href="http://www.nuke.build/docs/authoring-builds/cli-tools.html#fluent-apis">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+        ///   <ul>
+        ///     <li><c>&lt;configFile&gt;</c> via <see cref="DocFXPdfSettings.ConfigFile"/></li>
+        ///     <li><c>--basePath</c> via <see cref="DocFXPdfSettings.BasePath"/></li>
+        ///     <li><c>--changesFile</c> via <see cref="DocFXPdfSettings.ChangesFile"/></li>
+        ///     <li><c>--cleanupCacheHistory</c> via <see cref="DocFXPdfSettings.CleanupCacheHistory"/></li>
+        ///     <li><c>--content</c> via <see cref="DocFXPdfSettings.Content"/></li>
+        ///     <li><c>--correlationId</c> via <see cref="DocFXPdfSettings.CorrelationId"/></li>
+        ///     <li><c>--css</c> via <see cref="DocFXPdfSettings.CssFilePath"/></li>
+        ///     <li><c>--debug</c> via <see cref="DocFXPdfSettings.EnableDebugMode"/></li>
+        ///     <li><c>--debugOutput</c> via <see cref="DocFXPdfSettings.OutputFolderForDebugFiles"/></li>
+        ///     <li><c>--disableGitFeatures</c> via <see cref="DocFXPdfSettings.DisableGitFeatures"/></li>
+        ///     <li><c>--dryRun</c> via <see cref="DocFXPdfSettings.DryRun"/></li>
+        ///     <li><c>--errorHandling</c> via <see cref="DocFXPdfSettings.LoadErrorHandling"/></li>
+        ///     <li><c>--excludedTocs</c> via <see cref="DocFXPdfSettings.ExcludedTocs"/></li>
+        ///     <li><c>--exportRawModel</c> via <see cref="DocFXPdfSettings.ExportRawModel"/></li>
+        ///     <li><c>--exportViewModel</c> via <see cref="DocFXPdfSettings.ExportViewModel"/></li>
+        ///     <li><c>--falName</c> via <see cref="DocFXPdfSettings.FALName"/></li>
+        ///     <li><c>--fileMetadataFile</c> via <see cref="DocFXPdfSettings.FileMetadataFilePath"/></li>
+        ///     <li><c>--fileMetadataFiles</c> via <see cref="DocFXPdfSettings.FileMetadataFilePaths"/></li>
+        ///     <li><c>--force</c> via <see cref="DocFXPdfSettings.ForceRebuild"/></li>
+        ///     <li><c>--forcePostProcess</c> via <see cref="DocFXPdfSettings.ForcePostProcess"/></li>
+        ///     <li><c>--generatesAppendices</c> via <see cref="DocFXPdfSettings.GeneratesAppendices"/></li>
+        ///     <li><c>--generatesExternalLink</c> via <see cref="DocFXPdfSettings.GeneratesExternalLink"/></li>
+        ///     <li><c>--globalMetadata</c> via <see cref="DocFXPdfSettings.GlobalMetadata"/></li>
+        ///     <li><c>--globalMetadataFile</c> via <see cref="DocFXPdfSettings.GlobalMetadataFilePath"/></li>
+        ///     <li><c>--globalMetadataFiles</c> via <see cref="DocFXPdfSettings.GlobalMetadataFilePaths"/></li>
+        ///     <li><c>--help</c> via <see cref="DocFXPdfSettings.PrintHelpMessage"/></li>
+        ///     <li><c>--host</c> via <see cref="DocFXPdfSettings.PdfHost"/></li>
+        ///     <li><c>--hostname</c> via <see cref="DocFXPdfSettings.Host"/></li>
+        ///     <li><c>--intermediateFolder</c> via <see cref="DocFXPdfSettings.IntermediateFolder"/></li>
+        ///     <li><c>--keepFileLink</c> via <see cref="DocFXPdfSettings.KeepFileLink"/></li>
+        ///     <li><c>--keepRawFiles</c> via <see cref="DocFXPdfSettings.KeepRawFiles"/></li>
+        ///     <li><c>--locale</c> via <see cref="DocFXPdfSettings.Locale"/></li>
+        ///     <li><c>--log</c> via <see cref="DocFXPdfSettings.LogFilePath"/></li>
+        ///     <li><c>--logLevel</c> via <see cref="DocFXPdfSettings.LogLevel"/></li>
+        ///     <li><c>--lruSize</c> via <see cref="DocFXPdfSettings.LruSize"/></li>
+        ///     <li><c>--markdownEngineName</c> via <see cref="DocFXPdfSettings.MarkdownEngineName"/></li>
+        ///     <li><c>--markdownEngineProperties</c> via <see cref="DocFXPdfSettings.MarkdownEngineProperties"/></li>
+        ///     <li><c>--maxParallelism</c> via <see cref="DocFXPdfSettings.MaxParallelism"/></li>
+        ///     <li><c>--name</c> via <see cref="DocFXPdfSettings.Name"/></li>
+        ///     <li><c>--noLangKeyword</c> via <see cref="DocFXPdfSettings.NoLangKeyword"/></li>
+        ///     <li><c>--noStdin</c> via <see cref="DocFXPdfSettings.NoInputStreamArgs"/></li>
+        ///     <li><c>--output</c> via <see cref="DocFXPdfSettings.OutputFolder"/></li>
+        ///     <li><c>--overwrite</c> via <see cref="DocFXPdfSettings.Overwrite"/></li>
+        ///     <li><c>--port</c> via <see cref="DocFXPdfSettings.Port"/></li>
+        ///     <li><c>--postProcessors</c> via <see cref="DocFXPdfSettings.PostProcessors"/></li>
+        ///     <li><c>--rawModelOutputFolder</c> via <see cref="DocFXPdfSettings.RawModelOutputFolder"/></li>
+        ///     <li><c>--rawOutputFolder</c> via <see cref="DocFXPdfSettings.RawOutputFolder"/></li>
+        ///     <li><c>--repositoryRoot</c> via <see cref="DocFXPdfSettings.RepoRoot"/></li>
+        ///     <li><c>--resource</c> via <see cref="DocFXPdfSettings.Resource"/></li>
+        ///     <li><c>--schemaLicense</c> via <see cref="DocFXPdfSettings.SchemaLicense"/></li>
+        ///     <li><c>--serve</c> via <see cref="DocFXPdfSettings.Serve"/></li>
+        ///     <li><c>--template</c> via <see cref="DocFXPdfSettings.Templates"/></li>
+        ///     <li><c>--theme</c> via <see cref="DocFXPdfSettings.Themes"/></li>
+        ///     <li><c>--viewModelOutputFolder</c> via <see cref="DocFXPdfSettings.ViewModelOutputFolder"/></li>
+        ///     <li><c>--warningsAsErrors</c> via <see cref="DocFXPdfSettings.WarningsAsErrors"/></li>
+        ///     <li><c>--xref</c> via <see cref="DocFXPdfSettings.XRefMaps"/></li>
+        ///   </ul>
+        /// </remarks>
         public static IReadOnlyCollection<Output> DocFXPdf(DocFXPdfSettings toolSettings = null)
         {
             toolSettings = toolSettings ?? new DocFXPdfSettings();
@@ -530,6 +718,7 @@ namespace Nuke.DocFX
         ///     <li><c>--maxParallelism</c> via <see cref="DocFXPdfSettings.MaxParallelism"/></li>
         ///     <li><c>--name</c> via <see cref="DocFXPdfSettings.Name"/></li>
         ///     <li><c>--noLangKeyword</c> via <see cref="DocFXPdfSettings.NoLangKeyword"/></li>
+        ///     <li><c>--noStdin</c> via <see cref="DocFXPdfSettings.NoInputStreamArgs"/></li>
         ///     <li><c>--output</c> via <see cref="DocFXPdfSettings.OutputFolder"/></li>
         ///     <li><c>--overwrite</c> via <see cref="DocFXPdfSettings.Overwrite"/></li>
         ///     <li><c>--port</c> via <see cref="DocFXPdfSettings.Port"/></li>
@@ -598,6 +787,7 @@ namespace Nuke.DocFX
         ///     <li><c>--maxParallelism</c> via <see cref="DocFXPdfSettings.MaxParallelism"/></li>
         ///     <li><c>--name</c> via <see cref="DocFXPdfSettings.Name"/></li>
         ///     <li><c>--noLangKeyword</c> via <see cref="DocFXPdfSettings.NoLangKeyword"/></li>
+        ///     <li><c>--noStdin</c> via <see cref="DocFXPdfSettings.NoInputStreamArgs"/></li>
         ///     <li><c>--output</c> via <see cref="DocFXPdfSettings.OutputFolder"/></li>
         ///     <li><c>--overwrite</c> via <see cref="DocFXPdfSettings.Overwrite"/></li>
         ///     <li><c>--port</c> via <see cref="DocFXPdfSettings.Port"/></li>
@@ -623,6 +813,15 @@ namespace Nuke.DocFX
         ///   <p>Host a local static website.</p>
         ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
+        /// <remarks>
+        ///   <p>This is a <a href="http://www.nuke.build/docs/authoring-builds/cli-tools.html#fluent-apis">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+        ///   <ul>
+        ///     <li><c>&lt;folder&gt;</c> via <see cref="DocFXServeSettings.Folder"/></li>
+        ///     <li><c>--help</c> via <see cref="DocFXServeSettings.PrintHelpMessage"/></li>
+        ///     <li><c>--hostname</c> via <see cref="DocFXServeSettings.Host"/></li>
+        ///     <li><c>--port</c> via <see cref="DocFXServeSettings.Port"/></li>
+        ///   </ul>
+        /// </remarks>
         public static IReadOnlyCollection<Output> DocFXServe(DocFXServeSettings toolSettings = null)
         {
             toolSettings = toolSettings ?? new DocFXServeSettings();
@@ -668,6 +867,15 @@ namespace Nuke.DocFX
         ///   <p>List or export existing template.</p>
         ///   <p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
         /// </summary>
+        /// <remarks>
+        ///   <p>This is a <a href="http://www.nuke.build/docs/authoring-builds/cli-tools.html#fluent-apis">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+        ///   <ul>
+        ///     <li><c>&lt;command&gt;</c> via <see cref="DocFXTemplateSettings.Command"/></li>
+        ///     <li><c>--all</c> via <see cref="DocFXTemplateSettings.All"/></li>
+        ///     <li><c>--help</c> via <see cref="DocFXTemplateSettings.PrintHelpMessage"/></li>
+        ///     <li><c>--output</c> via <see cref="DocFXTemplateSettings.OutputFolder"/></li>
+        ///   </ul>
+        /// </remarks>
         public static IReadOnlyCollection<Output> DocFXTemplate(DocFXTemplateSettings toolSettings = null)
         {
             toolSettings = toolSettings ?? new DocFXTemplateSettings();
@@ -1353,6 +1561,10 @@ namespace Nuke.DocFX
         /// </summary>
         public virtual string Name { get; internal set; }
         /// <summary>
+        ///   Do not use stdin when wkhtmltopdf is executed.
+        /// </summary>
+        public virtual bool? NoInputStreamArgs { get; internal set; }
+        /// <summary>
         ///   Specify the output folder for the raw files, if not specified, raw files will by default be saved to _raw subfolder under output folder if keepRawFiles is set to true.
         /// </summary>
         public virtual string RawOutputFolder { get; internal set; }
@@ -1552,6 +1764,7 @@ namespace Nuke.DocFX
               .Add("--errorHandling={value}", LoadErrorHandling)
               .Add("--locale={value}", Locale)
               .Add("--name={value}", Name)
+              .Add("--noStdin", NoInputStreamArgs)
               .Add("--rawOutputFolder={value}", RawOutputFolder)
               .Add("{value}", ConfigFile)
               .Add("--changesFile={value}", ChangesFile)
@@ -5875,6 +6088,63 @@ namespace Nuke.DocFX
             return toolSettings;
         }
         #endregion
+        #region NoInputStreamArgs
+        /// <summary>
+        ///   <p><em>Sets <see cref="DocFXPdfSettings.NoInputStreamArgs"/></em></p>
+        ///   <p>Do not use stdin when wkhtmltopdf is executed.</p>
+        /// </summary>
+        [Pure]
+        public static DocFXPdfSettings SetNoInputStreamArgs(this DocFXPdfSettings toolSettings, bool? noInputStreamArgs)
+        {
+            toolSettings = toolSettings.NewInstance();
+            toolSettings.NoInputStreamArgs = noInputStreamArgs;
+            return toolSettings;
+        }
+        /// <summary>
+        ///   <p><em>Resets <see cref="DocFXPdfSettings.NoInputStreamArgs"/></em></p>
+        ///   <p>Do not use stdin when wkhtmltopdf is executed.</p>
+        /// </summary>
+        [Pure]
+        public static DocFXPdfSettings ResetNoInputStreamArgs(this DocFXPdfSettings toolSettings)
+        {
+            toolSettings = toolSettings.NewInstance();
+            toolSettings.NoInputStreamArgs = null;
+            return toolSettings;
+        }
+        /// <summary>
+        ///   <p><em>Enables <see cref="DocFXPdfSettings.NoInputStreamArgs"/></em></p>
+        ///   <p>Do not use stdin when wkhtmltopdf is executed.</p>
+        /// </summary>
+        [Pure]
+        public static DocFXPdfSettings EnableNoInputStreamArgs(this DocFXPdfSettings toolSettings)
+        {
+            toolSettings = toolSettings.NewInstance();
+            toolSettings.NoInputStreamArgs = true;
+            return toolSettings;
+        }
+        /// <summary>
+        ///   <p><em>Disables <see cref="DocFXPdfSettings.NoInputStreamArgs"/></em></p>
+        ///   <p>Do not use stdin when wkhtmltopdf is executed.</p>
+        /// </summary>
+        [Pure]
+        public static DocFXPdfSettings DisableNoInputStreamArgs(this DocFXPdfSettings toolSettings)
+        {
+            toolSettings = toolSettings.NewInstance();
+            toolSettings.NoInputStreamArgs = false;
+            return toolSettings;
+        }
+        /// <summary>
+        ///   <p><em>Toggles <see cref="DocFXPdfSettings.NoInputStreamArgs"/></em></p>
+        ///   <p>Do not use stdin when wkhtmltopdf is executed.</p>
+        /// </summary>
+        [Pure]
+        public static DocFXPdfSettings ToggleNoInputStreamArgs(this DocFXPdfSettings toolSettings)
+        {
+            toolSettings = toolSettings.NewInstance();
+            toolSettings.NoInputStreamArgs = !toolSettings.NoInputStreamArgs;
+            return toolSettings;
+        }
+        #endregion
         #region RawOutputFolder
         /// <summary>
         ///   <p><em>Sets <see cref="DocFXPdfSettings.RawOutputFolder"/></em></p>
@@ -8216,12 +8486,16 @@ namespace Nuke.DocFX
     [TypeConverter(typeof(TypeConverter<DocFXLogLevel>))]
     public partial class DocFXLogLevel : Enumeration
     {
-        public static DocFXLogLevel Diagnostic = new DocFXLogLevel { Value = "Diagnostic" };
-        public static DocFXLogLevel Verbose = new DocFXLogLevel { Value = "Verbose" };
-        public static DocFXLogLevel Info = new DocFXLogLevel { Value = "Info" };
-        public static DocFXLogLevel Suggestion = new DocFXLogLevel { Value = "Suggestion" };
-        public static DocFXLogLevel Warning = new DocFXLogLevel { Value = "Warning" };
-        public static DocFXLogLevel Error = new DocFXLogLevel { Value = "Error" };
+        public static DocFXLogLevel Diagnostic = (DocFXLogLevel) "Diagnostic";
+        public static DocFXLogLevel Verbose = (DocFXLogLevel) "Verbose";
+        public static DocFXLogLevel Info = (DocFXLogLevel) "Info";
+        public static DocFXLogLevel Suggestion = (DocFXLogLevel) "Suggestion";
+        public static DocFXLogLevel Warning = (DocFXLogLevel) "Warning";
+        public static DocFXLogLevel Error = (DocFXLogLevel) "Error";
+        public static explicit operator DocFXLogLevel(string value)
+        {
+            return new DocFXLogLevel { Value = value };
+        }
     }
     #endregion
     #region DocFXTemplateCommand
@@ -8234,8 +8508,12 @@ namespace Nuke.DocFX
     [TypeConverter(typeof(TypeConverter<DocFXTemplateCommand>))]
     public partial class DocFXTemplateCommand : Enumeration
     {
-        public static DocFXTemplateCommand Export = new DocFXTemplateCommand { Value = "Export" };
-        public static DocFXTemplateCommand List = new DocFXTemplateCommand { Value = "List" };
+        public static DocFXTemplateCommand Export = (DocFXTemplateCommand) "Export";
+        public static DocFXTemplateCommand List = (DocFXTemplateCommand) "List";
+        public static explicit operator DocFXTemplateCommand(string value)
+        {
+            return new DocFXTemplateCommand { Value = value };
+        }
     }
     #endregion
 }

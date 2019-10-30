@@ -590,6 +590,12 @@
             "help": "Specify the name of the generated pdf."
           },
           {
+            "name": "NoInputStreamArgs",
+            "type": "bool",
+            "format": "--noStdin",
+            "help": "Do not use stdin when wkhtmltopdf is executed."
+          },
+          {
             "name": "RawOutputFolder",
             "type": "string",
             "format": "--rawOutputFolder={value}",
