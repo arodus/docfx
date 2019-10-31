@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [vNext]
 
 ## [0.3.0] / 2019-10-30
-- Updatef for Nuke.Common 0.22.0
+- Updated for Nuke.Common 0.22.0
 
 ## [0.2.0] / 2019-03-22
 - Updated for Nuke.Common
